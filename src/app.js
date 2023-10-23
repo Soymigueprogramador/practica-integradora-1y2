@@ -6,19 +6,20 @@ import passport from 'passport';
 import { router as vistasRouter } from './routes/vistas.router';
 import { router as sessionsRouter } from './routes/sessions.router';
 import { initPassport } from './config/passport.config';
+import { config } from './config/config';
 
-const port = 8080;
+const port = config.port;
 const app = express();
 
-app.engine('handlebars', expressHandlebars()); 
+app.engine('handlebars', engine()); 
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParse());
 
 app.use(express.static(path.join(__dirname, '/public')));
-
 initPassport();
 app.use(passport.initialize());
 
