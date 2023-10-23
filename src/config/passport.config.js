@@ -2,7 +2,7 @@ import passport from 'passport'
 import local from 'passport-local'
 import passportJWT from 'passport-jwt'
 import bcrypt from 'bcrypt'
-import { usuariosModelo } from '../models/usuarios.model.js'
+import { usuariosModelo } from '../models/usuarios.model'
 
 export const initPassport = () => {
     passport.use('registro', new local.Strategy(
