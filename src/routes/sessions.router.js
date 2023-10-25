@@ -1,7 +1,7 @@
 import { Router } from "express";
 import passport from 'passport';
 import jwt from 'jsonwebtoken'; 
-import config from '../config/config';
+import config from '../config/config.js';
 
 export const router = Router();
 
@@ -42,3 +42,4 @@ router.get("/logout", (req, res) => {
     res.clearCookie('mg-lo-quiero-d3Cookie');
     res.status(200).redirect('/login?message=logeado!!'); 
 });
+export default router; 

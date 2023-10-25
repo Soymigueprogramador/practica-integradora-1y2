@@ -1,6 +1,6 @@
 import { Router } from "express";
 import passport from 'passport';
-import { usuariosModel } from '../models/usuarios.model';  
+import {usuariosModel} from "../models/usuarios.model.js";  
 export const router = Router();
 
 router.get('/registro', (req, res) => {
@@ -28,3 +28,4 @@ router.get('/perfil', passport.authenticate('jwt', { sessions: false }), async (
         page
     });
 });
+export default router;

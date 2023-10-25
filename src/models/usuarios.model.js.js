@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { models } from "mongoose";
 
 export const usuariosModelo=mongoose.model('usuarios', new mongoose.Schema({
     nombre: String,
@@ -11,4 +11,5 @@ export const usuariosModelo=mongoose.model('usuarios', new mongoose.Schema({
     }
 },{
    timestamps:true 
-}))
+}));
+export default models;
